@@ -35,6 +35,9 @@ export const App = () => {
             <div className="border-b justify-between p-2 text-lg  font-bold flex">
               <h1>
                 动画世代<span className="remove"> - 点击选择你看过的动画</span>
+                <span className="ml-2 text-zinc-400 font-medium">
+                  anime-sedai.egoist.dev
+                </span>
               </h1>
               <span className="shrink-0 whitespace-nowrap">
                 我看过 {selectedAnime.length}/
