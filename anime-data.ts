@@ -80,7 +80,7 @@ const data: Data = {
     { title: "只有神知道的世界", score: 7.2 },
     { title: "圣诞之吻SS", score: 7.3 },
     { title: "我的妹妹哪有这么可爱！", score: 7.1 },
-    { title: "更多 出包王女", score: 7.2 },
+    { title: "出包王女", score: 7.2 },
     { title: "女仆咖啡厅", score: 7.8 },
     { title: "亲吻姐姐", score: 6.7 },
     { title: "迷糊餐厅", score: 7.5 },
