@@ -97,7 +97,6 @@ const data: Data = {
     { title: "Fate/Zero", score: 8.1 },
     { title: "魔法少女小圆", score: 8.6 },
     { title: "回转企鹅罐", score: 8 },
-    { title: "银魂'", score: 8.7 },
     { title: "摇曳百合", score: 7.6 },
     { title: "我们仍未知道那天所看见的花的名字。", score: 7.6 },
     { title: "罪恶王冠", score: 6.5 },
@@ -200,8 +199,6 @@ const data: Data = {
     { title: "旋转少女", score: 7.4 },
     { title: "落第骑士英雄谭", score: 6.5 },
     { title: "没有黄段子存在的无聊世界", score: 6.1 },
-    { title: "请问您今天要来点兔子吗？？", score: 7.5 },
-    { title: "银魂°", score: 8.2 },
   ],
   "2016": [
     { title: "为美好的世界献上祝福！", score: 7.6 },
