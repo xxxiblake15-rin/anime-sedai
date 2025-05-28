@@ -247,7 +247,6 @@ const data: Data = {
     { title: "碧蓝之海", score: 7.8 },
     { title: "赛马娘 Pretty Derby", score: 7 },
     { title: "紫罗兰永恒花园", score: 7.5 },
-    { title: "JOJO的奇妙冒险 黄金之风", score: 8 },
     { title: "强风吹拂", score: 8.3 },
     { title: "少女☆歌剧 Revue Starlight", score: 7.9 },
     { title: "擅长捉弄的高木同学", score: 7.5 },
