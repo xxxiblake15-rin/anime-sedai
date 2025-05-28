@@ -285,7 +285,6 @@ const data: Data = {
   "2020": [
     { title: "异种族风俗娘评鉴指南", score: 7.7 },
     { title: "魔女之旅", score: 7.1 },
-    { title: "进击的巨人 最终季", score: 7.7 },
     { title: "安达与岛村", score: 7.3 },
     { title: "异度侵入", score: 7.5 },
     { title: "别对映像研出手！", score: 8.1 },
