@@ -108,6 +108,18 @@ export const App = () => {
             全选
           </button>
 
+          {selectedAnime.length > 0 && (
+            <button
+              type="button"
+              className="border rounded-md px-4 py-2 inline-flex"
+              onClick={() => {
+                setSelectedAnime([]);
+              }}
+            >
+              清除
+            </button>
+          )}
+
           <button
             type="button"
             className="border rounded-md px-4 py-2 inline-flex"
