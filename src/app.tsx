@@ -31,7 +31,10 @@ export const App = () => {
     <>
       <div className="flex flex-col gap-4 pb-10">
         <div className="p-4 flex flex-col md:items-center ">
-          <div className="flex flex-col border border-b-0 w-fit" ref={wrapper}>
+          <div
+            className="flex flex-col border border-b-0 bg-white w-fit"
+            ref={wrapper}
+          >
             <div className="border-b justify-between p-2 text-lg  font-bold flex">
               <h1>
                 动画世代<span className="remove"> - 点击选择你看过的动画</span>
