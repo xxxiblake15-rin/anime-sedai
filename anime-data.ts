@@ -305,7 +305,6 @@ const data: Data = {
     { title: "奇巧计程车", score: 8.5 },
     { title: "打了300年的史莱姆，不知不觉就练到了满级", score: 6.3 },
     { title: "漂流少年", score: 7.8 },
-    { title: "佐贺偶像是传奇 复仇", score: 7.8 },
     { title: "堀与宫村", score: 6.8 },
     { title: "派遣战斗员！", score: 6.3 },
     { title: "古见同学有交流障碍症", score: 7 },
