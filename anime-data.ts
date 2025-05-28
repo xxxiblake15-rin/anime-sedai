@@ -151,7 +151,6 @@ const data: Data = {
     { title: "噬血狂袭", score: 6.6 },
     { title: "来自风平浪静的明天", score: 7.5 },
     { title: "我的妹妹哪有这么可爱。", score: 6.9 },
-    { title: "瑞克和莫蒂 第一季", score: 8.4 },
     { title: "我不受欢迎，怎么想都是你们的错！", score: 6.9 },
     { title: "境界的彼方", score: 6.8 },
     { title: "我的脑内选项正在全力妨碍学园恋爱喜剧", score: 6.6 },
