@@ -2,9 +2,13 @@ import { useRef, useState } from "react";
 import animeData from "../anime-data";
 import { domToBlob } from "modern-screenshot";
 import { toast } from "sonner";
+import { usePersistState } from "./hooks";
 
 export const App = () => {
-  const [selectedAnime, setSelectedAnime] = useState<string[]>([]);
+  const [selectedAnime, setSelectedAnime] = usePersistState<string[]>(
+    "selectedAnime",
+    []
+  );
 
   const wrapper = useRef<HTMLDivElement>(null);
 
