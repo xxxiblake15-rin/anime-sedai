@@ -196,7 +196,6 @@ const data: Data = {
     { title: "在地下城寻求邂逅是否搞错了什么", score: 6.8 },
     { title: "干物妹！小埋", score: 6.8 },
     { title: "吹响！悠风号", score: 8.3 },
-    { title: "伪恋：", score: 7 },
     { title: "终物语", score: 7.8 },
     { title: "旋转少女", score: 7.4 },
     { title: "落第骑士英雄谭", score: 6.5 },
