@@ -222,7 +222,6 @@ const data: Data = {
     { title: "剑风传奇", score: 6.8 },
   ],
   "2017": [
-    { title: "为美好的世界献上祝福！ 第二季", score: 7.7 },
     { title: "少女终末旅行", score: 8.1 },
     { title: "来自深渊", score: 8.2 },
     { title: "小林家的龙女仆", score: 7.4 },
