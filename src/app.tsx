@@ -266,7 +266,14 @@ ${Object.keys(animeData)
           >
             低空飞行
           </a>
-          制作
+          制作，
+          <a
+            href="https://github.com/egoist/anime-sedai"
+            target="_blank"
+            className="underline"
+          >
+            查看代码
+          </a>
         </div>
 
         <div className="text-center">
