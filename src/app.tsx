@@ -223,16 +223,30 @@ ${Object.keys(animeData)
             <div className="flex items-center justify-between p-2 border-b">
               <span>锐评提示词</span>
 
-              <button
-                type="button"
-                className="text-sm text-zinc-500"
-                onClick={() => {
-                  navigator.clipboard.writeText(prompt)
-                  toast.success("复制成功")
-                }}
-              >
-                复制
-              </button>
+              <div className="flex items-center gap-4">
+                <button
+                  type="button"
+                  className="text-sm text-zinc-500 hover:bg-zinc-100 px-1.5 h-7 flex items-center rounded-md"
+                  onClick={() => {
+                    navigator.clipboard.writeText(prompt)
+                    toast.success("复制成功")
+                  }}
+                >
+                  复制
+                </button>
+
+                <button
+                  type="button"
+                  className="text-sm text-zinc-500 hover:bg-zinc-100 px-1.5 h-7 flex items-center rounded-md"
+                  onClick={() => {
+                    location.href = `chatwise://chat?input=${encodeURIComponent(
+                      prompt
+                    )}`
+                  }}
+                >
+                  在 ChatWise 中打开 (需要先安装)
+                </button>
+              </div>
             </div>
             <textarea
               readOnly
