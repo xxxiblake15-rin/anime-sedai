@@ -1,31 +1,36 @@
-import { useRef, useState } from "react";
-import animeData from "../anime-data";
-import { domToBlob } from "modern-screenshot";
-import { toast } from "sonner";
-import { usePersistState } from "./hooks";
+import { useRef, useState } from "react"
+import animeData from "../anime-data"
+import { domToBlob } from "modern-screenshot"
+import { toast } from "sonner"
+import { usePersistState } from "./hooks"
 
 export const App = () => {
   const [selectedAnime, setSelectedAnime] = usePersistState<string[]>(
     "selectedAnime",
     []
-  );
+  )
 
-  const wrapper = useRef<HTMLDivElement>(null);
+  const wrapper = useRef<HTMLDivElement>(null)
 
   const copyImage = async () => {
-    if (!wrapper.current) return;
+    if (!wrapper.current) return
 
     const blob = await domToBlob(wrapper.current, {
       scale: 2,
       filter(el) {
         if (el instanceof HTMLElement && el.classList.contains("remove")) {
-          return false;
+          return false
         }
-        return true;
+        return true
       },
-    });
-    await navigator.clipboard.write([new ClipboardItem({ [blob.type]: blob })]);
-  };
+    })
+
+    await navigator.clipboard.write([
+      new ClipboardItem({
+        [blob.type]: blob,
+      }),
+    ])
+  }
 
   return (
     <>
@@ -46,14 +51,14 @@ export const App = () => {
                 我看过 {selectedAnime.length}/
                 {
                   Object.values(animeData).flatMap((year) => {
-                    return year.map((item) => item.title).slice(0, 12);
+                    return year.map((item) => item.title).slice(0, 12)
                   }).length
                 }{" "}
                 部动画
               </span>
             </div>
             {Object.keys(animeData).map((year) => {
-              const items = animeData[year] || [];
+              const items = animeData[year] || []
               return (
                 <div key={year} className="flex border-b">
                   <div className="bg-red-500 shrink-0 text-white flex items-center font-bold justify-center p-1 size-16 md:size-20 border-black">
@@ -61,7 +66,7 @@ export const App = () => {
                   </div>
                   <div className="flex shrink-0">
                     {items.slice(0, 12).map((item) => {
-                      const isSelected = selectedAnime.includes(item.title);
+                      const isSelected = selectedAnime.includes(item.title)
                       return (
                         <button
                           key={item.title}
@@ -74,21 +79,21 @@ export const App = () => {
                               if (isSelected) {
                                 return prev.filter(
                                   (title) => title !== item.title
-                                );
+                                )
                               }
-                              return [...prev, item.title];
-                            });
+                              return [...prev, item.title]
+                            })
                           }}
                         >
                           <span className="leading-tight w-full line-clamp-3">
                             {item.title}
                           </span>
                         </button>
-                      );
+                      )
                     })}
                   </div>
                 </div>
-              );
+              )
             })}
           </div>
         </div>
@@ -100,9 +105,9 @@ export const App = () => {
             onClick={() => {
               setSelectedAnime(
                 Object.values(animeData).flatMap((year) => {
-                  return year.map((item) => item.title).slice(0, 12);
+                  return year.map((item) => item.title).slice(0, 12)
                 })
-              );
+              )
             }}
           >
             全选
@@ -113,7 +118,7 @@ export const App = () => {
               type="button"
               className="border rounded-md px-4 py-2 inline-flex"
               onClick={() => {
-                setSelectedAnime([]);
+                setSelectedAnime([])
               }}
             >
               清除
@@ -127,8 +132,12 @@ export const App = () => {
               toast.promise(copyImage(), {
                 success: "复制成功",
                 loading: "复制中",
-                error: "复制失败",
-              });
+                error(error) {
+                  return `复制失败: ${
+                    error instanceof Error ? error.message : "未知错误"
+                  }`
+                },
+              })
             }}
           >
             复制图片
@@ -156,5 +165,5 @@ export const App = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
