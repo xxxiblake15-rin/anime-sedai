@@ -96,7 +96,7 @@ export const App = () => {
 ...
 
 >> ...
- 
+
 ...
 """
 
@@ -337,7 +337,12 @@ ${Object.keys(animeData)
 
         <div className="text-center">
           作者的其它产品:{" "}
-          <a href="https://chatwise.app" target="_blank" className="underline">
+          <a
+            href="https://chatwise.app"
+            target="_blank"
+            className="underline inline-flex items-center gap-1"
+          >
+            <img src="https://chatwise.app/favicon.png" className="size-4" />{" "}
             ChatWise
           </a>
           , 一个优雅的 AI 聊天客户端
