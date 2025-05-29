@@ -12,7 +12,7 @@ export const App = () => {
 
   const wrapper = useRef<HTMLDivElement>(null)
 
-  const copyImage = async () => {
+  const imageToBlob = async () => {
     if (!wrapper.current) return
 
     const blob = await domToBlob(wrapper.current, {
@@ -25,11 +25,36 @@ export const App = () => {
       },
     })
 
+    return blob
+  }
+
+  const copyImage = async () => {
+    const blob = await imageToBlob()
+
+    if (!blob) return
+
     await navigator.clipboard.write([
       new ClipboardItem({
         [blob.type]: blob,
       }),
     ])
+  }
+
+  const downloadImage = async () => {
+    if (!wrapper.current) return
+
+    const blob = await imageToBlob()
+
+    if (!blob) return
+
+    const url = URL.createObjectURL(blob)
+
+    const a = document.createElement("a")
+    a.href = url
+    a.download = "anime-sedai.png"
+    a.click()
+
+    URL.revokeObjectURL(url)
   }
 
   return (
@@ -141,6 +166,24 @@ export const App = () => {
             }}
           >
             复制图片
+          </button>
+
+          <button
+            type="button"
+            className="border rounded-md px-4 py-2 inline-flex"
+            onClick={() => {
+              toast.promise(downloadImage(), {
+                success: "下载成功",
+                loading: "下载中",
+                error(error) {
+                  return `下载失败: ${
+                    error instanceof Error ? error.message : "未知错误"
+                  }`
+                },
+              })
+            }}
+          >
+            下载图片
           </button>
         </div>
 
