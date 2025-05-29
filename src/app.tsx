@@ -1,4 +1,4 @@
-import { useRef, useState } from "react"
+import { useMemo, useRef, useState } from "react"
 import animeData from "../anime-data"
 import { domToBlob } from "modern-screenshot"
 import { toast } from "sonner"
@@ -56,6 +56,37 @@ export const App = () => {
 
     URL.revokeObjectURL(url)
   }
+
+  const prompt = useMemo(() => {
+    return `
+以下是我的动画列表，请生成一个锐评：
+${Object.keys(animeData)
+  .map((year) => {
+    const items = animeData[year] || []
+
+    if (items.length === 0) return ""
+
+    const watched = items
+      .filter((item) => selectedAnime.includes(item.title))
+      .map((item) => item.title)
+      .join(", ")
+    const unWatched = items
+      .filter((item) => !selectedAnime.includes(item.title))
+      .map((item) => item.title)
+      .join(", ")
+
+    return [
+      `**${year}年**:`,
+      `看过: ${watched || "无"}`,
+      `没看过: ${unWatched || "无"}`,
+    ]
+      .filter(Boolean)
+      .join("\n")
+  })
+  .filter(Boolean)
+  .join("\n")}
+    `.trim()
+  }, [selectedAnime])
 
   return (
     <>
@@ -185,6 +216,31 @@ export const App = () => {
           >
             下载图片
           </button>
+        </div>
+
+        <div className="flex flex-col gap-2 max-w-screen-md w-full mx-auto">
+          <div className="border focus-within:ring-2 ring-pink-500 focus-within:border-pink-500 rounded-md">
+            <div className="flex items-center justify-between p-2 border-b">
+              <span>锐评提示词</span>
+
+              <button
+                type="button"
+                className="text-sm text-zinc-500"
+                onClick={() => {
+                  navigator.clipboard.writeText(prompt)
+                  toast.success("复制成功")
+                }}
+              >
+                复制
+              </button>
+            </div>
+            <textarea
+              readOnly
+              className="outline-none w-full p-2 resize-none cursor-default"
+              rows={10}
+              value={prompt}
+            />
+          </div>
         </div>
 
         <div className="mt-2 text-center">
