@@ -66,11 +66,12 @@ ${Object.keys(animeData)
 
     if (items.length === 0) return ""
 
-    const watched = items
+    const sliceItems = items.slice(0, 12)
+    const watched = sliceItems
       .filter((item) => selectedAnime.includes(item.title))
       .map((item) => item.title)
       .join(", ")
-    const unWatched = items
+    const unWatched = sliceItems
       .filter((item) => !selectedAnime.includes(item.title))
       .map((item) => item.title)
       .join(", ")
