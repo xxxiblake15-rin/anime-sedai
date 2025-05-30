@@ -1,14 +1,46 @@
-import { useMemo, useRef, useState } from "react"
+import { useEffect, useMemo, useRef, useState } from "react"
 import animeData from "../anime-data"
 import { domToBlob } from "modern-screenshot"
 import { toast } from "sonner"
 import { usePersistState } from "./hooks"
+import { atou, utoa } from "./utils"
+
+const storageKey = "selectedAnime"
+
+type URLState = { selectedAnime?: string[] }
+
+const encodeToHash = (obj: URLState) => {
+  return utoa(JSON.stringify(obj))
+}
+
+const decodeFromHash = (hash: string): URLState => {
+  return JSON.parse(atou(hash)) as URLState
+}
 
 export const App = () => {
   const [selectedAnime, setSelectedAnime] = usePersistState<string[]>(
-    "selectedAnime",
+    storageKey,
     []
   )
+
+  // hey, yes, i'm using useEffect, what is the problem? talk is cheap, fix the code
+  useEffect(() => {
+    const value = localStorage.getItem(storageKey)
+    if (!value) {
+      const hash = location.hash.replace("#", "")
+      if (hash) {
+        const state = decodeFromHash(hash)
+        if (state.selectedAnime) {
+          setSelectedAnime(state.selectedAnime)
+        }
+      }
+    }
+  }, [])
+
+  useEffect(() => {
+    const hash = encodeToHash({ selectedAnime })
+    location.hash = `#${hash}`
+  }, [selectedAnime])
 
   const wrapper = useRef<HTMLDivElement>(null)
 
