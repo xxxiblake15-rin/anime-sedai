@@ -17,7 +17,7 @@ export const App = () => {
   const wrapper = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    document.title = t('title')
+    document.title = t("title")
   }, [language, t])
 
   const imageToBlob = async () => {
@@ -72,7 +72,11 @@ export const App = () => {
 
     return `
 ${preset}
-${t('watched') === 'Watched' ? 'User anime viewing record: (the year below is the anime release year)' : '用户动画观看记录：(下面的年份是动画发布的年份)'}
+${
+  t("watched") === "Watched"
+    ? "User anime viewing record: (the year below is the anime release year)"
+    : "用户动画观看记录：(下面的年份是动画发布的年份)"
+}
 ${Object.keys(animeData)
   .map((year) => {
     const items = animeData[year] || []
@@ -81,18 +85,18 @@ ${Object.keys(animeData)
 
     const sliceItems = items.slice(0, 12)
     const watched = sliceItems
-      .filter((item) => selectedAnime.includes(getAnimeTitle(item, 'zh')))
+      .filter((item) => selectedAnime.includes(getAnimeTitle(item, "zh")))
       .map((item) => getAnimeTitle(item, language))
       .join(", ")
     const unWatched = sliceItems
-      .filter((item) => !selectedAnime.includes(getAnimeTitle(item, 'zh')))
+      .filter((item) => !selectedAnime.includes(getAnimeTitle(item, "zh")))
       .map((item) => getAnimeTitle(item, language))
       .join(", ")
 
     return [
-      `**${year}${t('year')}**:`,
-      `${t('watched')}: ${watched || t('none')}`,
-      `${t('notWatched')}: ${unWatched || t('none')}`,
+      `**${year}${t("year")}**:`,
+      `${t("watched")}: ${watched || t("none")}`,
+      `${t("notWatched")}: ${unWatched || t("none")}`,
     ]
       .filter(Boolean)
       .join("\n")
@@ -103,7 +107,7 @@ ${Object.keys(animeData)
   }, [selectedAnime, promptType, language, t])
 
   const totalAnime = Object.values(animeData).flatMap((year) => {
-    return year.map((item) => getAnimeTitle(item, 'zh')).slice(0, 12)
+    return year.map((item) => getAnimeTitle(item, "zh")).slice(0, 12)
   }).length
 
   return (
@@ -120,31 +124,43 @@ ${Object.keys(animeData)
             >
               <div className="border-b justify-between p-2 text-lg  font-bold flex">
                 <h1>
-                  {t('title')}<span className="remove"> - {t('subtitle')}</span>
+                  {t("title")}
+                  <span className="remove"> - {t("subtitle")}</span>
                   <span className="ml-2 text-zinc-400 font-medium">
-                    {t('website')}
+                    {t("website")}
                   </span>
                 </h1>
                 <span className="shrink-0 whitespace-nowrap">
-                  {t('watchedCount', { count: selectedAnime.length, total: totalAnime })}
+                  {t("watchedCount", {
+                    count: selectedAnime.length,
+                    total: totalAnime,
+                  })}
                 </span>
               </div>
               {Object.keys(animeData).map((year) => {
                 const items = animeData[year] || []
                 return (
                   <div key={year} className="flex border-b">
-                    <div className={`
+                    <div
+                      className={`
                       bg-red-500 shrink-0 text-white flex items-center font-bold justify-center p-1 border-black
                       h-16 md:h-20 
-                      ${language === 'en' ? 'w-16 md:w-20' : 'w-16 md:w-20'}
-                    `}>
-                      <span className={`${language === 'en' ? 'text-sm md:text-base' : 'text-base'} text-center`}>
+                      ${language === "en" ? "w-16 md:w-20" : "w-16 md:w-20"}
+                    `}
+                    >
+                      <span
+                        className={`${
+                          language === "en"
+                            ? "text-sm md:text-base"
+                            : "text-base"
+                        } text-center`}
+                      >
                         {year}
                       </span>
                     </div>
                     <div className="flex shrink-0">
                       {items.slice(0, 12).map((item) => {
-                        const animeKey = getAnimeTitle(item, 'zh')
+                        const animeKey = getAnimeTitle(item, "zh")
                         const displayTitle = getAnimeTitle(item, language)
                         const isSelected = selectedAnime.includes(animeKey)
                         return (
@@ -152,11 +168,19 @@ ${Object.keys(animeData)
                             key={animeKey}
                             className={`
                               h-16 md:h-20 
-                              ${language === 'en' ? 'w-20 md:w-24' : 'w-16 md:w-20'}
-                              border-l break-all text-center shrink-0 inline-flex items-center 
+                              ${
+                                language === "en"
+                                  ? "w-20 md:w-24"
+                                  : "w-16 md:w-20"
+                              }
+                              border-l break-words text-center shrink-0 inline-flex items-center 
                               p-1 overflow-hidden justify-center cursor-pointer 
-                              ${language === 'en' ? 'text-xs' : 'text-sm'} 
-                              ${isSelected ? "bg-green-500" : "hover:bg-zinc-100"}
+                              ${language === "en" ? "text-xs" : "text-sm"} 
+                              ${
+                                isSelected
+                                  ? "bg-green-500"
+                                  : "hover:bg-zinc-100"
+                              }
                               transition-colors duration-200
                             `}
                             title={displayTitle}
@@ -171,22 +195,35 @@ ${Object.keys(animeData)
                               })
                             }}
                           >
-                            <span className={`leading-tight w-full ${language === 'en' ? 'line-clamp-4' : 'line-clamp-3'}`}>
+                            <span
+                              className={`leading-tight w-full ${
+                                language === "en"
+                                  ? "line-clamp-4"
+                                  : "line-clamp-3"
+                              }`}
+                            >
                               {displayTitle}
                             </span>
                           </button>
                         )
                       })}
-                      {Array.from({ length: Math.max(0, 12 - items.length) }, (_, index) => (
-                        <div
-                          key={`empty-${index}`}
-                          className={`
+                      {Array.from(
+                        { length: Math.max(0, 12 - items.length) },
+                        (_, index) => (
+                          <div
+                            key={`empty-${index}`}
+                            className={`
                             h-16 md:h-20 
-                            ${language === 'en' ? 'w-20 md:w-24' : 'w-16 md:w-20'}
+                            ${
+                              language === "en"
+                                ? "w-20 md:w-24"
+                                : "w-16 md:w-20"
+                            }
                             border-l bg-gray-50
                           `}
-                        />
-                      ))}
+                          />
+                        )
+                      )}
                       <div className="w-0 h-16 md:h-20 border-r" />
                     </div>
                   </div>
@@ -203,12 +240,14 @@ ${Object.keys(animeData)
             onClick={() => {
               setSelectedAnime(
                 Object.values(animeData).flatMap((year) => {
-                  return year.map((item) => getAnimeTitle(item, 'zh')).slice(0, 12)
+                  return year
+                    .map((item) => getAnimeTitle(item, "zh"))
+                    .slice(0, 12)
                 })
               )
             }}
           >
-            {t('selectAll')}
+            {t("selectAll")}
           </button>
 
           {selectedAnime.length > 0 && (
@@ -219,7 +258,7 @@ ${Object.keys(animeData)
                 setSelectedAnime([])
               }}
             >
-              {t('clear')}
+              {t("clear")}
             </button>
           )}
 
@@ -228,17 +267,20 @@ ${Object.keys(animeData)
             className="border rounded-md px-4 py-2 inline-flex"
             onClick={() => {
               toast.promise(copyImage(), {
-                success: t('copySuccess'),
-                loading: t('copying'),
+                success: t("copySuccess"),
+                loading: t("copying"),
                 error(error) {
-                  return t('copyFailed', { 
-                    error: error instanceof Error ? error.message : t('unknownError')
+                  return t("copyFailed", {
+                    error:
+                      error instanceof Error
+                        ? error.message
+                        : t("unknownError"),
                   })
                 },
               })
             }}
           >
-            {t('copyImage')}
+            {t("copyImage")}
           </button>
 
           <button
@@ -246,17 +288,20 @@ ${Object.keys(animeData)
             className="border rounded-md px-4 py-2 inline-flex"
             onClick={() => {
               toast.promise(downloadImage(), {
-                success: t('downloadSuccess'),
-                loading: t('downloading'),
+                success: t("downloadSuccess"),
+                loading: t("downloading"),
                 error(error) {
-                  return t('downloadFailed', { 
-                    error: error instanceof Error ? error.message : t('unknownError')
+                  return t("downloadFailed", {
+                    error:
+                      error instanceof Error
+                        ? error.message
+                        : t("unknownError"),
                   })
                 },
               })
             }}
           >
-            {t('downloadImage')}
+            {t("downloadImage")}
           </button>
         </div>
 
@@ -264,7 +309,7 @@ ${Object.keys(animeData)
           <div className="border focus-within:ring-2 ring-pink-500 focus-within:border-pink-500 rounded-md">
             <div className="flex items-center justify-between p-2 border-b">
               <div className="flex items-center gap-2">
-                <span>{t('promptType')}</span>
+                <span>{t("promptType")}</span>
                 <select
                   className="border rounded-md"
                   value={promptType}
@@ -272,8 +317,8 @@ ${Object.keys(animeData)
                     setPromptType(e.currentTarget.value as any)
                   }}
                 >
-                  <option value="normal">{t('promptNormal')}</option>
-                  <option value="zako">{t('promptZako')}</option>
+                  <option value="normal">{t("promptNormal")}</option>
+                  <option value="zako">{t("promptZako")}</option>
                 </select>
               </div>
 
@@ -283,10 +328,10 @@ ${Object.keys(animeData)
                   className="text-sm text-zinc-500 hover:bg-zinc-100 px-1.5 h-7 flex items-center rounded-md"
                   onClick={() => {
                     navigator.clipboard.writeText(prompt)
-                    toast.success(t('copySuccess'))
+                    toast.success(t("copySuccess"))
                   }}
                 >
-                  {t('copy')}
+                  {t("copy")}
                 </button>
 
                 <button
@@ -298,7 +343,7 @@ ${Object.keys(animeData)
                     )}`
                   }}
                 >
-                  {t('openInChatWise')}
+                  {t("openInChatWise")}
                 </button>
               </div>
             </div>
@@ -312,39 +357,43 @@ ${Object.keys(animeData)
         </div>
 
         <div className="mt-2 text-center">
-          {t('footer')}
+          {t("footer")}
           <a
-            href={language === 'zh' ? "https://x.com/localhost_4173" : "https://x.com/localhost_5173"}
+            href={
+              language === "zh"
+                ? "https://x.com/localhost_4173"
+                : "https://x.com/localhost_5173"
+            }
             target="_blank"
             className="underline"
           >
-            {language === 'zh' ? '低空飞行' : 'egoist'}
+            {language === "zh" ? "低空飞行" : "egoist"}
           </a>
-          {t('madeBy')}
+          {t("madeBy")}
           <a
             href="https://github.com/egoist/anime-sedai"
             target="_blank"
             className="underline"
           >
-            {t('viewCode')}
+            {t("viewCode")}
           </a>
         </div>
 
-        {language === 'en' && (
+        {language === "en" && (
           <div className="text-center text-sm text-gray-600">
-            English version is translated by{' '}
+            English version is translated by{" "}
             <a
               href="https://mhh0318.github.io/"
               target="_blank"
               className="underline"
             >
-             h1t
+              h1t
             </a>
           </div>
         )}
 
         <div className="text-center">
-          {t('otherProducts')}
+          {t("otherProducts")}
           <a
             href="https://chatwise.app"
             target="_blank"
@@ -353,7 +402,7 @@ ${Object.keys(animeData)
             <img src="https://chatwise.app/favicon.png" className="size-4" />{" "}
             ChatWise
           </a>
-          {t('aiChatClient')}
+          {t("aiChatClient")}
         </div>
       </div>
     </>
