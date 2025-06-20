@@ -605,7 +605,7 @@ const data: Data = {
     },
     {
       titleZh: "心理测量者",
-      titleEn: "Psychi-Pass",
+      titleEn: "Psycho-Pass",
       titleJa: "PSYCHO-PASS サイコパス",
       score: 7.9,
     },
