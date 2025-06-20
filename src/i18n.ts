@@ -52,7 +52,7 @@ export const translations = {
     copying: "Copying",
     downloading: "Downloading",
     unknownError: "Unknown error",
-    promptType: "Review Prompt",
+    promptType: "AI Prompt",
     promptNormal: "Normal",
     promptZako: "Zako❤",
     copy: "Copy",
