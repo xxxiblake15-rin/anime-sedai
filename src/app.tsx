@@ -83,7 +83,7 @@ ${Object.keys(animeData)
 
     if (items.length === 0) return ""
 
-    const sliceItems = items.slice(0, 12)
+    const sliceItems = items.slice(0, 22)
     const watched = sliceItems
       .filter((item) => selectedAnime.includes(getAnimeTitle(item, "zh")))
       .map((item) => getAnimeTitle(item, language))
@@ -107,7 +107,7 @@ ${Object.keys(animeData)
   }, [selectedAnime, promptType, language, t])
 
   const totalAnime = Object.values(animeData).flatMap((year) => {
-    return year.map((item) => getAnimeTitle(item, "zh")).slice(0, 12)
+    return year.map((item) => getAnimeTitle(item, "zh")).slice(0, 22)
   }).length
 
   return (
@@ -159,7 +159,7 @@ ${Object.keys(animeData)
                       </span>
                     </div>
                     <div className="flex shrink-0">
-                      {items.slice(0, 12).map((item) => {
+                      {items.slice(0, 22).map((item) => {
                         const animeKey = getAnimeTitle(item, "zh")
                         const displayTitle = getAnimeTitle(item, language)
                         const isSelected = selectedAnime.includes(animeKey)
@@ -208,7 +208,7 @@ ${Object.keys(animeData)
                         )
                       })}
                       {Array.from(
-                        { length: Math.max(0, 12 - items.length) },
+                        { length: Math.max(0, 22 - items.length) },
                         (_, index) => (
                           <div
                             key={`empty-${index}`}
@@ -220,6 +220,7 @@ ${Object.keys(animeData)
                                 : "w-16 md:w-20"
                             }
                             border-l bg-gray-50
+                            flex justify-center items-center text-gray-400
                           `}
                           />
                         )
@@ -242,7 +243,7 @@ ${Object.keys(animeData)
                 Object.values(animeData).flatMap((year) => {
                   return year
                     .map((item) => getAnimeTitle(item, "zh"))
-                    .slice(0, 12)
+                    .slice(0, 22)
                 })
               )
             }}
@@ -356,7 +357,7 @@ ${Object.keys(animeData)
           </div>
         </div>
 
-        <div className="mt-2 text-center">
+        {/* <div className="mt-2 text-center">
           {t("footer")}
           <a
             href={
@@ -370,6 +371,30 @@ ${Object.keys(animeData)
             {language === "zh" ? "低空飞行" : "egoist"}
           </a>
           {t("madeBy")}
+          <a
+            href="https://github.com/egoist/anime-sedai"
+            target="_blank"
+            className="underline"
+          >
+            {t("viewCode")}
+          </a>
+        </div> */}
+
+        <div className="mt-2 text-center">
+          {language === "zh"
+            ? "原作者是低空飞行"
+            : "Original author: 低空飞行"}
+          <a
+            href="https://github.com/egoist/anime-sedai"
+            target="_blank"
+            className="underline ml-1"
+          >
+            anime-sedai
+          </a>
+          {language === "zh"
+            ? "，修改和发布已征得本人许可。"
+            : ", modified with his permission."}
+          <br />
           <a
             href="https://github.com/egoist/anime-sedai"
             target="_blank"
@@ -392,7 +417,7 @@ ${Object.keys(animeData)
           </div>
         )}
 
-        <div className="text-center">
+        {/* <div className="text-center">
           {t("otherProducts")}
           <a
             href="https://chatwise.app"
@@ -403,7 +428,7 @@ ${Object.keys(animeData)
             ChatWise
           </a>
           {t("aiChatClient")}
-        </div>
+        </div> */}
       </div>
     </>
   )
