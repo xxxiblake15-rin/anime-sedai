@@ -12,20 +12,11 @@ type Data = {
 
 const data: Data = {
   "1990": [
-    //10
-    {
-      titleZh: "灌篮高手",
-      titleEn: "SLAM DUNK",
-      titleJa: "SLAM DUNK"
-    },
+    //12
     {
       titleZh: "美少女战士",
       titleEn: "Sailor Moon",
       titleJa: "美少女戦士セーラームーン"
-    },
-    { titleZh: "新世纪福音战士", 
-      titleEn: "EVA", 
-      titleJa: "新世紀エヴァンゲリオン"
     },
     {
       titleZh: "幽游白书",
@@ -33,9 +24,9 @@ const data: Data = {
       titleJa: "幽☆遊☆白書"
     },
     {
-      titleZh: "地狱老师",
-      titleEn: "Hell Teacher: Jigoku Sensei Nube",
-      titleJa: "地獄先生ぬ～べ～"
+      titleZh: "忍者乱太郎",
+      titleEn: "Ninjaboy Rantaro",
+      titleJa: "忍たま乱太郎"
     },
     {
       titleZh: "城市猎人",
@@ -43,14 +34,86 @@ const data: Data = {
       titleJa: "シティーハンター'91"
     },
     {
+      titleZh: "蜡笔小新",
+      titleEn: "Crayon Shin-chan",
+      titleJa: "クレヨンしんちゃん"
+    },
+    {
+      titleZh: "鲁邦三世",
+      titleEn: "Lupin the 3rd",
+      titleJa: "ルパン三世"
+    },
+    {
+      titleZh: "吸血姫美夕",
+      titleEn: "Vampire Princess Miyu",
+      titleJa: "吸血姫美夕"
+    },
+    {
+      titleZh: "不思议游戏",
+      titleEn: "Mysterious Play",
+      titleJa: "ふしぎ遊戯"
+    },
+    {
+      titleZh: "魔神英雄传",
+      titleEn: "MASHIN HERO WATARU",
+      titleJa: "魔神英雄伝ワタル"
+    },
+    {
+      titleZh: "樱桃小丸子",
+      titleEn: "Chibi Maruko-chan",
+      titleJa: "ちびまる子ちゃん"
+    },
+    {
+      titleZh: "哆啦A梦",
+      titleEn: "Doraemon",
+      titleJa: "ドラえもん"
+    },
+    {
+      titleZh: "龙珠",
+      titleEn: "Dragon Ball",
+      titleJa: "ドラゴンボール"
+    }
+    
+  ],
+  "1995": [
+    //17
+    { titleZh: "新世纪福音战士", 
+      titleEn: "EVA", 
+      titleJa: "新世紀エヴァンゲリオン"
+    },
+    {
+      titleZh: "少女革命",
+      titleEn: "Revolutionary Girl Utena",
+      titleJa: "少女革命ウテナ"
+    },
+    {
+      titleZh: "圣少女",
+      titleEn: "Kaitou Saint Tail",
+      titleJa: "怪盗セイント・テール"
+    },
+    { titleZh: "头文字D", 
+      titleEn: "Initial D", 
+      titleJa: "イニシャル・ディー"
+    },
+    {
+      titleZh: "海贼王",
+      titleEn: "One Piece",
+      titleJa: "One Piece"
+    },
+    {
+      titleZh: "灌篮高手",
+      titleEn: "SLAM DUNK",
+      titleJa: "SLAM DUNK"
+    },
+    {
       titleZh: "魔卡少女樱",
       titleEn: "CC Sakura",
       titleJa: "カードキャプターさくら"
     },
     {
-      titleZh: "蜡笔小新",
-      titleEn: "Crayon Shin-chan",
-      titleJa: "クレヨンしんちゃん"
+      titleZh: "秀逗魔导士",
+      titleEn: "slayers",
+      titleJa: "スレイヤーズ"
     },
     {
       titleZh: "浪客剑心",
@@ -68,24 +131,14 @@ const data: Data = {
       titleJa: "カウボーイビバップ -COWBOY BEBOP-"
     },
     {
-      titleZh: "鲁邦三世",
-      titleEn: "Lupin the 3rd",
-      titleJa: "ルパン三世"
-    },
-    {
-      titleZh: "数码宝贝",
-      titleEn: "Digital Monster Advanture",
-      titleJa: "デジモンアドベンチャー"
-    },
-    {
       titleZh: "神奇宝贝",
       titleEn: "Pocket Monster",
       titleJa: "ポケットモンスター"
     },
     {
-      titleZh: "不思议游戏",
-      titleEn: "Mysterious Play",
-      titleJa: "ふしぎ遊戯"
+      titleZh: "数码宝贝",
+      titleEn: "Digital Monster Advanture",
+      titleJa: "デジモンアドベンチャー"
     },
     {
       titleZh: "金田一少年事件簿",
@@ -103,18 +156,13 @@ const data: Data = {
       titleJa: "爆走兄弟レッツ&ゴー!!"
     },
     {
-      titleZh: "魔神英雄传",
-      titleEn: "MASHIN HERO WATARU",
-      titleJa: "魔神英雄伝ワタル"
-    },
-    {
       titleZh: "名侦探柯南",
       titleEn: "Detective Conan",
       titleJa: "名探偵コナン"
     }
   ],
   "2000": [
-    //10
+    //12
     { titleZh: "犬夜叉", 
       titleEn: "Inuyasha", 
       titleJa: "犬夜叉"
@@ -176,7 +224,7 @@ const data: Data = {
     }
   ],
   "2001": [
-    //10
+    //11
     {
       titleZh: "棋魂",
       titleEn: "Hikaru no Go",
@@ -215,6 +263,11 @@ const data: Data = {
       titleZh: "刃牙",
       titleEn: "Baki the Grappler",
       titleJa: "グラップラー刃牙 "
+    },
+    {
+      titleZh: "水果篮子",
+      titleEn: "fruit basket",
+      titleJa: "フルーツバスケット "
     },
     {
       titleZh: "星之卡比",
@@ -334,9 +387,14 @@ const data: Data = {
   "2004": [
     //10
     {
-      titleZh: "怪物",
+      titleZh: "怪物事变",
       titleEn: "MONSTER",
       titleJa: "MONSTER"
+    },
+    {
+      titleZh: "蔷薇少女",
+      titleEn: "Rozen Maiden",
+      titleJa: "ローゼンメイデン"
     },
     { titleZh: "学园爱丽丝", 
       titleEn: "Alice Academy", 
@@ -379,7 +437,7 @@ const data: Data = {
     }
   ],
   "2005": [
-    //10
+    //12
     {
       titleZh: "水星领航员",
       titleEn: "ARIA The ANIMATION",
@@ -536,10 +594,15 @@ const data: Data = {
       titleZh: "少年阴阳师",
       titleEn: "The Young Onmyoji",
       titleJa: "少年陰陽師"
+    },
+    {
+      titleZh: "结界师",
+      titleEn: "barrier master",
+      titleJa: "結界師"
     }
   ],
   "2007": [
-    //20
+    //22
     {
       titleZh: "火影忍者疾风传",
       titleEn: "Naruto Shippuden",
@@ -566,6 +629,11 @@ const data: Data = {
       titleJa: "らき☆すた"
     },
     {
+      titleZh: "SA优等生",
+      titleEn: "Special A",
+      titleJa: "S・A～スペシャル・エー"
+    },
+    {
       titleZh: "黑之契约者",
       titleEn: "Darker than Black",
       titleJa: "DARKER THAN BLACK -黒の契約者-"
@@ -584,6 +652,11 @@ const data: Data = {
       titleZh: "南家三姐妹",
       titleEn: "Minami-ke",
       titleJa: "みなみけ"
+    },
+    {
+      titleZh: "秒速五厘米",
+      titleEn: "5 Centimeters per Second",
+      titleJa: "秒速5センチメートル"
     },
     {
       titleZh: "地球防卫少年",
@@ -654,6 +727,11 @@ const data: Data = {
       titleJa: "夏目友人帳"
     },
     {
+      titleZh: "魍魉之匣",
+      titleEn: "Mōryō no Hako",
+      titleJa: "魍魎の匣"
+    },
+    {
       titleZh: "龙与虎",
       titleEn: "Toradora!",
       titleJa: "とらドラ！"
@@ -672,11 +750,6 @@ const data: Data = {
       titleZh: "强袭魔女",
       titleEn: "Strike Witches",
       titleJa: "ストライクウィッチーズ"
-    },
-    {
-      titleZh: "夏娃的时间",
-      titleEn: "Are you enjoying the time of EVE?",
-      titleJa: "イヴの時間"
     },
     {
       titleZh: "食灵-零",
@@ -752,7 +825,7 @@ const data: Data = {
     } 
   ],
   "2009": [
-    //20
+    //22
     {
       titleZh: "钢之炼金术师FA",
       titleEn: "Fullmetal Alchemist: Brotherhood",
@@ -762,6 +835,11 @@ const data: Data = {
       titleZh: "化物语",
       titleEn: "Bakemonogatari",
       titleJa: "化物語"
+    },
+    {
+      titleZh: "潘多拉之心",
+      titleEn: "Pandora Hearts",
+      titleJa: "Pandora Hearts"
     },
     {
       titleZh: "某科学的超电磁炮",
@@ -859,7 +937,7 @@ const data: Data = {
     }
   ],
   "2010": [
-    //20
+    //21
     {
       titleZh: "Angel Beats!",
       titleEn: "Angel Beats!",
@@ -869,6 +947,11 @@ const data: Data = {
       titleZh: "缘之空",
       titleEn: "Yosuga no Sora",
       titleJa: "ヨスガノソラ"
+    },
+    {
+      titleZh: "江户盗贼团五叶",
+      titleEn: "Saraiya GoYo",
+      titleJa: "さらい屋 五葉"
     },
     {
       titleZh: "我的妹妹哪有这么可爱！",
@@ -1065,7 +1148,7 @@ const data: Data = {
 
   ],
   "2012": [
-    //16
+    //19
     {
       titleZh: "JOJO的奇妙冒险",
       titleEn: "JoJo's Bizarre Adventure",
@@ -1084,6 +1167,14 @@ const data: Data = {
     { titleZh: "冰菓", 
       titleEn: "Hyouka", 
       titleJa: "氷菓"
+    },
+    { titleZh: "邻座的怪同学", 
+      titleEn: "My Little Monster", 
+      titleJa: "となりの怪物くん"
+    },
+    { titleZh: "绯色的欠片", 
+      titleEn: "Hiiro no Kakera", 
+      titleJa: "緋色の欠片"
     },
     { 
       titleZh: "猛烈宇宙海贼", 
@@ -1152,7 +1243,7 @@ const data: Data = {
     }
   ],
   "2013": [
-    //16
+    //17
     {
       titleZh: "进击的巨人",
       titleEn: "Attack on Titan",
@@ -1182,6 +1273,11 @@ const data: Data = {
       titleZh: "境界的彼方",
       titleEn: "Beyond the Boundary",
       titleJa: "境界の彼方"
+    },
+    {
+      titleZh: "言叶之庭",
+      titleEn: "The Garden of Words",
+      titleJa: "言の葉の庭"
     },
     {
       titleZh: "噬血狂袭",
@@ -1235,11 +1331,16 @@ const data: Data = {
     }
   ],
   "2014": [
-    //16
+    //17
     {
       titleZh: "排球少年！",
       titleEn: "HAIKYU!!",
       titleJa: "ハイキュー!!"
+    },
+    {
+      titleZh: "东京残响",
+      titleEn: "Terror in Resonance",
+      titleJa: "残響のテロル"
     },
     {
       titleZh: "四月是你的谎言",
@@ -1270,6 +1371,11 @@ const data: Data = {
       titleZh: "天体的秩序",
       titleEn: "Celestial Method",
       titleJa: "天体のメソッド"
+    },
+    {
+      titleZh: "野良神",
+      titleEn: "Noragami: Stray God",
+      titleJa: "ノラガミ"
     },
     {
       titleZh: "鬼灯的冷彻",
@@ -1313,7 +1419,7 @@ const data: Data = {
     }
   ],
   "2015": [
-    //12
+    //16
     {
       titleZh: "暗杀教室",
       titleEn: "Assassination Classroom",
@@ -1345,6 +1451,11 @@ const data: Data = {
       titleJa: "プラスティック・メモリーズ"
     },
     {
+      titleZh: "我想吃掉你的胰脏",
+      titleEn: "I want to eat your pancreas",
+      titleJa: "君の膵臓をたべたい"
+    },
+    {
       titleZh: "在地下城寻求邂逅是否搞错了什么",
       titleEn: "Is it wrong to Try to Pick Up Girls in a Dungeon?",
       titleJa: "ダンジョンに出会いを求めるのは間違っているだろうか"
@@ -1353,6 +1464,11 @@ const data: Data = {
       titleZh: "终结的炽天使",
       titleEn: "Seraph of the End",
       titleJa: "終わりのセラフ "
+    },
+    {
+      titleZh: "爱吃拉面的小泉同学",
+      titleEn: "Ms. Koizumi Loves Ramen Noodles",
+      titleJa: "ラーメン大好き小泉さん "
     },
     {
       titleZh: "干物妹！小埋",
@@ -1373,6 +1489,11 @@ const data: Data = {
       titleZh: "阿松",
       titleEn: "Osomatsu-san",
       titleJa: "おそ松さん"
+    },
+    {
+      titleZh: "俺物语",
+      titleEn: "MY LOVE STORY",
+      titleJa: "俺物語!!"
     },
     {
       titleZh: "一拳超人",
@@ -1537,7 +1658,7 @@ const data: Data = {
     }, 
   ],
   "2018": [
-    //14
+    //15
     {
       titleZh: "紫罗兰永恒花园",
       titleEn: "Violet Evergarden",
@@ -1668,7 +1789,7 @@ const data: Data = {
     }
   ],
   "2020": [
-    //10
+    //11
     {
       titleZh: "魔女之旅",
       titleEn: "Wandering Witch: The Journey of Elaina",
@@ -1705,6 +1826,11 @@ const data: Data = {
       titleJa: "呪術廻戦"
     },
     {
+      titleZh: "忧国的莫里亚蒂",
+      titleEn: "Moriarty the Patriot",
+      titleJa: "憂国のモリアーティ"
+    },
+    {
       titleZh: "别对映像研出手！",
       titleEn: "Keep Your Hands Off Eizouken!",
       titleJa: "映像研には手を出すな！"
@@ -1721,7 +1847,7 @@ const data: Data = {
     }
   ],
   "2021": [
-    //10
+    //9
     {
       titleZh: "佐贺偶像是传奇",
       titleEn: "ZOMBIE LAND SAGA REVENGE",
@@ -1769,7 +1895,7 @@ const data: Data = {
     }
   ],
   "2022": [
-    //10
+    //12
     {
       titleZh: "间谍过家家",
       titleEn: "SPY×FAMILY",
@@ -1885,7 +2011,7 @@ const data: Data = {
     },
   ],
   "2024": [
-    //6
+    //8
     {
       titleZh: "擅长逃跑的殿下",
       titleEn: "The Young Master Who Was Good at Escape",
